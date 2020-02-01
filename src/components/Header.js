@@ -1,9 +1,13 @@
 import React from "react";
-import Title from "Title";
+import Title from "./Title";
+import ClassSelector from "./ClassSelector";
 
 function Header() {
     return (
-        <Title></Title>
+        <div>
+            <Title />
+            <ClassSelector />
+        </div>
     );
 }
 
