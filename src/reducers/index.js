@@ -1,9 +1,7 @@
 import { combineReducers } from 'redux'
-import TodoReducer from './TodoReducer';
-import BackgroundReducer from './BackgroundReducer';
 
 const Reducer = combineReducers({
-    TodoReducer, BackgroundReducer
+    // List all your reducers here
 });
 
 export default Reducer;
