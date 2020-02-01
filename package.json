@@ -1,0 +1,26 @@
+{
+  "name": "rice-apps-redux-example",
+  "version": "1.0.0",
+  "description": "Describe rice-apps-redux-example here",
+  "private": true,
+  "scripts": {
+    "build": "nwb build-react-app",
+    "clean": "nwb clean-app",
+    "start": "nwb serve-react-app",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server"
+  },
+  "dependencies": {
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4"
+  },
+  "devDependencies": {
+    "nwb": "^0.23.0"
+  },
+  "author": "",
+  "license": "MIT",
+  "repository": ""
+}
