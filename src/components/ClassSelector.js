@@ -3,7 +3,12 @@ import {connect} from 'react-redux';
 import {toggleCourse} from '../actions/CoursesActions';
 
 const ClassSelector = ({courses, toggleCourse}) => {
-    return <div />;
+	return (<div>
+		{courses.map(c => 
+			(<button key={c.crn} onClick={() => toggleCourse(c.crn)}>
+				{c.name}
+			</button>))}
+	</div>);
 }
 
 export default connect(
@@ -11,6 +16,6 @@ export default connect(
                 courses: state.CoursesReducer.courses,
         }),
         (dispatch) => ({
-                toggleCourse: crn => dispatch(toggleCourse(crn))
+			toggleCourse: crn => dispatch(toggleCourse(crn))
         }),
 )(ClassSelector);
