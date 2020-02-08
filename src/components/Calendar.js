@@ -13,7 +13,7 @@ const Calendar = ({courses}) => {
             <ul style = {{display:"flex", flexDirection:"row"}}>
                 {
                     days.map(day => (
-                        <Day day={day} courses={{courses}}/>
+                        <Day day={day} courses={courses}/>
                     ))
                 }
             </ul>

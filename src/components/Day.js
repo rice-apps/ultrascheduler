@@ -19,11 +19,4 @@ const Day = ({day, courses}) => (
         </li>
 )
 
-export default connect(
-    (state) => ({
-            courses: state.CoursesReducer.courses,
-    }),
-    (dispatch) => ({
-        
-    }),
-)(Day);;
+export default Day;
