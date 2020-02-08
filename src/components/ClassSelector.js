@@ -7,6 +7,7 @@ const ClassSelector = ({courses, toggleCourse}) => {
 		{courses.map(c => 
 			(<button key={c.crn} onClick={() => toggleCourse(c.crn)}>
 				{c.name}
+				
 			</button>))}
 	</div>);
 }
