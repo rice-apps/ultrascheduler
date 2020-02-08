@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {toggleCourse} from '../actions/CoursesActions';
 import Course from "./Course";
 
-const Day = ({day, courses}) => (
+const Day = ({day, courses, toggleCourse}) => (
         <li style = {{display:"inline"}}>
             <h1>{day}</h1>
             <ul>
@@ -12,11 +12,17 @@ const Day = ({day, courses}) => (
                         .map(course => (
                         <Course name={course.name} 
                             visible={course.visible} 
-                            toggle={() => {console.log("epic1")}} 
+                            toggle={() => toggleCourse(course.crn)}
                         />))
                 }
             </ul>
         </li>
 )
 
-export default Day;
+export default connect(
+    (state) => ({
+    }),
+    (dispatch) => ({
+        toggleCourse: crn => dispatch(toggleCourse(crn))
+    }),
+)(Day);
