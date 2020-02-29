@@ -1,24 +1,25 @@
 import './App.css'
 import Header from "./components/Header";
 import MyCalendar from "./components/Calendar";
-import { Calendar, Views }  from "react-big-calendar"
-import localizer from 'react-big-calendar/lib/localizers/globalize'
-import Globalize from 'globalize'
-
-
+import { BigCalendar, Calendar, Views }  from "react-big-calendar"
+import moment from 'moment'
+import localizer from 'react-big-calendar/lib/localizers/moment'
 import React, {Component} from 'react'
+// import Globalize from 'globalize'
 
-Globalize.locale("en");
 
-Globalize.load(
-// Core
-require( "cldr-data/supplemental/likelySubtags" ),
-require( "cldr-data/main/en/numbers" ),
-require( "cldr-data/supplemental/plurals" )
-);
+
+// Globalize.load(
+// // Core
+// require( "cldr-data/supplemental/likelySubtags" ),
+// require( "cldr-data/main/en/numbers" ),
+// require( "cldr-data/supplemental/plurals" )
+// );
+
+// Globalize.locale("en");
 
 // Set "en" as our default locale.
-const globalizeLocalizer = localizer(Globalize);
+// const globalizeLocalizer = localizer(Globalize);
 
 class App extends Component {
   render() {
@@ -35,7 +36,7 @@ class App extends Component {
         }]}
         step={15}
         timeslots={8}
-        localizer={globalizeLocalizer}
+        localizer={localizer(moment)}
         defaultView={Views.WEEK}
         defaultDate={new Date(2015, 3, 12)}
          />
