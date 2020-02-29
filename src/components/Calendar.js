@@ -1,22 +1,25 @@
 import React, { useState, useEffect } from "react";
 import {connect} from 'react-redux';
-import {toggleCourse} from '../actions/CoursesActions';
-import Course from "./Course";
-import Day from "./Day";
+import coursetimes from "../utils/coursetimes";
+import moment from 'moment'
+import { Calendar, Views, momentLocalizer }  from "react-big-calendar"
+import 'react-big-calendar/lib/css/react-big-calendar.css'
+
+const localizer = momentLocalizer(moment)
 
 const days = ["M", "T", "W", "R", "F", "S", "U"];
 
-const Calendar = ({courses}) => {
+const CourseCalendar = ({courses}) => {
     return (
         <div>
-            <h1>{"Days"}</h1>
-            <ul style = {{display:"flex", flexDirection:"row"}}>
-                {
-                    days.map(day => (
-                        <Day day={day} courses={courses}/>
-                    ))
-                }
-            </ul>
+            <Calendar
+            events = {coursetimes(courses)}
+            step={5}
+            timeslots={8}
+            localizer={localizer}
+            defaultView={Views.WEEK}
+            defaultDate={new Date(2015, 3, 12)}
+            />
         </div>
     )
 }
@@ -28,4 +31,4 @@ export default connect(
     (dispatch) => ({
         
     }),
-)(Calendar);;
+)(CourseCalendar);

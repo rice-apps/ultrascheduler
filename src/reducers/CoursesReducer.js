@@ -3,38 +3,28 @@ import * as ACTIONS from "../actions/CoursesActions"
 const defaultCoursesReducerState = {
         courses: [
                 {
-                        "name": "COMP 182",
-                        "crn" : 123456,
+                        "days": "TRF",
+                        "startTime": [9, 25],
+                        "endTime": [10, 30],
+                        "courseName": "COMP 182",
                         "instructors": ["Luay, Nakleh"],
-                        "visible" : false,
-                        "slots": {
-                                "T" : [1040, 1105],
-                                "R" : [1040, 1105],
-                                "F" : [1100, 1215]
-                        }
+                        "crn": 123456
                 },
                 {
-                        "name": "CAAM 210",
-                        "crn" : 654321,
-                        "instructors": ["Luay, Nakleh"],
-                        "visible" : true,
-                        "slots": {
-                                "M" : [1040, 1105],
-                                "W" : [1040, 1105],
-                                "S" : [1100, 1215],
-                                "U" : [1100, 1215]
-                        }
+                        "days": "MWF",
+                        "startTime": [2, 0],
+                        "endTime": [2, 50],
+                        "courseName": "CAAM 210",
+                        "instructors": ["Sershen", "Protasov"],
+                        "crn": 654321
                 },
                 {
-                        "name": "FWIS 151",
-                        "crn" : 111111,
-                        "instructors": ["Celeste, Mark"],
-                        "visible" : true,
-                        "slots": {
-                                "M" : [1040, 1105],
-                                "W" : [1040, 1105],
-                                "F" : [1100, 1215],
-                        }
+                        "days": "MWF",
+                        "startTime": [10, 0],
+                        "endTime": [11, 0],
+                        "courseName": "FWIS 151",
+                        "instructors": ["Smith", "Doe"],
+                        "crn": 655657
                 }
 
         ]
