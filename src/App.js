@@ -5,7 +5,7 @@ import CourseCalendar from "./components/Calendar";
 
 class App extends Component {
   render() {
-    return <div className="App" style={{ display: "inline" }}>
+    return <div className="App" stle={{ display: "inline" }}>
         <Header />
         <CourseCalendar />
     </div>
