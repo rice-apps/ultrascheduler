@@ -1,10 +1,9 @@
 import React from 'react'
-
 import * as dates from 'date-arithmetic'
-import { Calendar, Views, Navigate } from 'react-big-calendar'
+import { Navigate } from 'react-big-calendar'
 import TimeGrid from 'react-big-calendar/lib/TimeGrid'
 
-class MyWeek extends React.Component {
+class CourseWeek extends React.Component {
     static range = date => {
       let start = date
       let end = dates.add(start, 6, 'day')
@@ -27,22 +26,9 @@ class MyWeek extends React.Component {
     }
     render() {
         let { date } = this.props
-        let range = MyWeek.range(date)
-
+        let range = CourseWeek.range(date)
         return <TimeGrid {...this.props} range={range} eventOffset={15} />
     }
 }
 
-let CustomView = ({ localizer, events }) => (
-    <React.Fragment>
-        <Calendar
-        events={events}
-        localizer={localizer}
-        defaultView={Views.WEEK}
-        defaultDate={new Date(2015, 3, 12)}
-        views={{ month: true, week: MyWeek }}
-        />
-    </React.Fragment>
-)
-
-export default CustomView;
+export default CourseWeek;

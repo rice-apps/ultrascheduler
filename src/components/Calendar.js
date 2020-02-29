@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import {connect} from 'react-redux';
 import coursetimes from "../utils/coursetimes";
 import moment from 'moment'
+import CourseWeek from "./CourseWeek"
 import { Calendar, Views, momentLocalizer }  from "react-big-calendar"
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 
@@ -18,6 +19,7 @@ const CourseCalendar = ({courses}) => {
             timeslots={8}
             localizer={localizer}
             defaultView={Views.WEEK}
+            views={{month: false, week: CourseWeek, day: false}}
             defaultDate={new Date(2015, 3, 12)}
             />
         </div>
