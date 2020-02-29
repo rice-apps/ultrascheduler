@@ -11,12 +11,13 @@ const localizer = momentLocalizer(moment)
 const days = ["M", "T", "W", "R", "F", "S", "U"];
 
 const CourseCalendar = ({courses}) => {
+    console.log(courses);
     return (
         <div>
             <Calendar
             events = {coursetimes(courses)}
-            step={5}
-            timeslots={8}
+            step={10}
+            timeslots={4}
             localizer={localizer}
             defaultView={Views.WEEK}
             views={{month: false, week: CourseWeek, day: false}}

@@ -5,8 +5,8 @@ import TimeGrid from 'react-big-calendar/lib/TimeGrid'
 
 class CourseWeek extends React.Component {
     static range = date => {
-      let start = date
-      let end = dates.add(start, 6, 'day')
+      let start = new Date(2015, 3, 12)
+      let end = new Date(2015, 3, 18)
     
       let current = start
       let range = []
@@ -27,7 +27,12 @@ class CourseWeek extends React.Component {
     render() {
         let { date } = this.props
         let range = CourseWeek.range(date)
-        return <TimeGrid {...this.props} range={range} eventOffset={15} />
+        return <TimeGrid
+          {...this.props} 
+          min={new Date(2015, 3, 12, 7, 0, 0, 0)} 
+          max={new Date(2015, 3, 12, 22, 0, 0, 0)} 
+          range={range}
+          eventOffset={15} />
     }
 }
 

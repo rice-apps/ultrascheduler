@@ -12,8 +12,8 @@ const defaultCoursesReducerState = {
                 },
                 {
                         "days": "MWF",
-                        "startTime": [2, 0],
-                        "endTime": [2, 50],
+                        "startTime": [14, 0],
+                        "endTime": [14, 50],
                         "courseName": "CAAM 210",
                         "instructors": ["Sershen", "Protasov"],
                         "crn": 654321
