@@ -15,11 +15,13 @@
     "cldr-data": "^36.0.0",
     "iana-tz-data": "^2019.1.0",
     "moment": "^2.24.0",
+    "node-sass": "^4.13.1",
     "react": "^16.10.2",
     "react-big-calendar": "^0.24.0",
     "react-dom": "^16.10.2",
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
+    "sass-loader": "^8.0.2",
     "webpack": "^4.41.6"
   },
   "devDependencies": {
