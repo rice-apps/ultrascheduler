@@ -19,6 +19,7 @@ const CourseCalendar = ({courses}) => {
             localizer={localizer}
             defaultView={Views.WEEK}
             defaultDate={new Date(2015, 3, 12)}
+            toolbar={false}
             />
         </div>
     )
