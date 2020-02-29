@@ -6,8 +6,7 @@ const ClassSelector = ({courses, toggleCourse}) => {
 	return (<div>
 		{courses.map(c => 
 			(<button key={c.crn} onClick={() => toggleCourse(c.crn)}>
-				{c.name}
-				
+				{c.courseName}
 			</button>))}
 	</div>);
 }

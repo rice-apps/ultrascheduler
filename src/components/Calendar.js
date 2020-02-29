@@ -21,6 +21,7 @@ const CourseCalendar = ({courses}) => {
             defaultView={Views.WEEK}
             views={{month: false, week: CourseWeek, day: false}}
             defaultDate={new Date(2015, 3, 12)}
+            onSelectEvent={event => alert(event.title + "\n" + event.desc)}
             toolbar={false}
             />
         </div>

@@ -26,7 +26,7 @@ function coursetimes(courseData) {
                 {
                     id: coursetimes.id++,
                     title: course.courseName,
-                    desc: course.instructors,
+                    desc: description,
                     allDay: false,
                     start: courseStart,
                     end: courseEnd
