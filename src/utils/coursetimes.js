@@ -14,10 +14,15 @@ function coursetimes(courseData) {
         "crn": 123456
     }]
     */
+    if( typeof coursetimes.id == 'undefined' ) {
+        coursetimes.id = 0;
+    }
     const daysOfWeek = "UMTWRFS";
     let courseTimes = [];
 
     for (let course of courseData) {
+        if (!course.visible)
+            continue;
         for (let day of course.days) {
             // Build the start and end times as dates.
             let baseDay = dates.add(WEEKSTART, daysOfWeek.indexOf(day, 'day'), 'day')

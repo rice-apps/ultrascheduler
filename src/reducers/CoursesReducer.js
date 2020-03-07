@@ -8,7 +8,8 @@ const defaultCoursesReducerState = {
                         "endTime": [10, 30],
                         "courseName": "COMP 182",
                         "instructors": ["Luay, Nakleh"],
-                        "crn": 123456
+                        "crn": 123456,
+                        "visible": true,
                 },
                 {
                         "days": "MWF",
@@ -16,7 +17,8 @@ const defaultCoursesReducerState = {
                         "endTime": [14, 50],
                         "courseName": "CAAM 210",
                         "instructors": ["Sershen", "Protasov"],
-                        "crn": 654321
+                        "crn": 654321,
+                        "visible": true,
                 },
                 {
                         "days": "MWF",
@@ -24,7 +26,8 @@ const defaultCoursesReducerState = {
                         "endTime": [11, 0],
                         "courseName": "FWIS 151",
                         "instructors": ["Smith", "Doe"],
-                        "crn": 655657
+                        "crn": 655657,
+                        "visible": true,
                 }
 
         ]
