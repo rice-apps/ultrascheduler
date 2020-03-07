@@ -5,7 +5,7 @@ const defaultCoursesReducerState = {
                 {
                         "days": "TRF",
                         "startTime": [9, 25],
-                        "endTime": [10, 30],
+                        "endTime": [10, 40],
                         "courseName": "COMP 182",
                         "instructors": ["Luay, Nakleh"],
                         "crn": 123456,
@@ -28,7 +28,25 @@ const defaultCoursesReducerState = {
                         "instructors": ["Smith", "Doe"],
                         "crn": 655657,
                         "visible": true,
-                }
+                },
+                // {
+                //         "days": "S",
+                //         "startTime": [6, 19],
+                //         "endTime": [13, 37],
+                //         "courseName": "HELL 666",
+                //         "instructors": ["Pher", "Lucy"],
+                //         "crn": 239530,
+                //         "visible": false,
+                // },
+                // {
+                //         "days": "U",
+                //         "startTime": [21, 30],
+                //         "endTime": [22, 30],
+                //         "courseName": "SLPZ 222",
+                //         "instructors": ["Baere", "Theodore"],
+                //         "crn": 222222,
+                //         "visible": false,
+                // }
 
         ]
 }

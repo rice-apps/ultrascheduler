@@ -17,16 +17,21 @@ const CourseCalendar = ({courses}) => {
             <Calendar
             events = {coursetimes(courses)}
             step={10}
-            timeslots={4}
+            timeslots={3}
             localizer={localizer}
             defaultView={Views.WEEK}
             views={{month: false, week: CourseWeek, day: false}}
             defaultDate={WEEKSTART}
             onSelectEvent={event => alert(event.title + "\n" + event.desc + "\n" + event.source)}
             toolbar={false}
+            style={style}
             />
         </div>
     )
+}
+
+const style = {
+    height: '100%'
 }
 
 export default connect(
