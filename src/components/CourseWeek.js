@@ -16,8 +16,9 @@ class CourseWeek extends React.Component {
     render() {
         const {date, courses} = this.props
         const range = Array.from({length: 7}, (x,i) => dates.add(date, i, 'day'));
-        const startHr = min(8, min.apply(null, courses.map(c => (c.startTime[0] - 1) % 24)));
-        const endHr = max(15, max.apply(null, courses.map(c => (c.endTime[0] + 1) % 24)));
+        const visible = courses.filter(c => c.visible);
+        const startHr = min(8, min.apply(null, visible.map(c => (c.startTime[0] - 1) % 24)));
+        const endHr = max(14, max.apply(null, visible.map(c => (c.endTime[0] + 1) % 24)));
         return (
             <TimeGrid
                 {...this.props} 
