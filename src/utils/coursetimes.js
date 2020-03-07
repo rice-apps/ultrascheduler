@@ -32,6 +32,7 @@ function coursetimes(courseData) {
                     id: coursetimes.id++,
                     title: course.courseName,
                     desc: description,
+                    source: course,
                     allDay: false,
                     start: courseStart,
                     end: courseEnd
