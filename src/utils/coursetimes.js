@@ -1,3 +1,7 @@
+import { WEEKSTART } from '../constants/DefaultDateInfo'
+import {merge} from 'react-big-calendar/lib/utils/dates'
+import * as dates from 'date-arithmetic'
+
 function coursetimes(courseData) {
     /*
     Example:
@@ -7,7 +11,7 @@ function coursetimes(courseData) {
         "endTime": [10, 30],
         "courseName": "Calculus III",
         "instructors": ["Teacher A"],
-        "CRN": 123456
+        "crn": 123456
     }]
     */
     const daysOfWeek = "UMTWRFS";
@@ -15,13 +19,14 @@ function coursetimes(courseData) {
 
     for (let course of courseData) {
         for (let day of course.days) {
-            let hardcodedDay = 12 + daysOfWeek.indexOf(day);
-            let courseStart = new Date(2015, 3, hardcodedDay, course.startTime[0], course.startTime[1]);
-            let courseEnd = new Date(2015, 3, hardcodedDay, course.endTime[0], course.endTime[1]);
-
+            // Build the start and end times as dates.
+            let baseDay = dates.add(WEEKSTART, daysOfWeek.indexOf(day, 'day'), 'day')
+            let courseStart = merge(baseDay, new Date(0, 0, 0, course.startTime[0], course.startTime[1]))
+            let courseEnd = merge(baseDay, new Date(0, 0, 0, course.endTime[0], course.endTime[1]))
+            // Generate the description from the course object
             let description = "Instructors: " + course.instructors.join(", ");
             description += "\nCRN: " + course.crn;
-
+            // Add this new course event object to the result array.
             courseTimes.push(
                 {
                     id: coursetimes.id++,
@@ -34,7 +39,6 @@ function coursetimes(courseData) {
             );
         }
     }
-    
     return courseTimes;
 }
 
