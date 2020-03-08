@@ -40,8 +40,8 @@ const defaultCoursesReducerState = {
                 },
                 {
                         "days": "U",
-                        "startTime": [21, 30],
-                        "endTime": [22, 30],
+                        "startTime": [22, 30],
+                        "endTime": [23, 30],
                         "courseName": "SLPZ 222",
                         "instructors": ["Baere", "Theodore"],
                         "crn": 222222,

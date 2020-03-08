@@ -15,15 +15,30 @@ class CourseWeek extends React.Component {
     }
     render() {
         const {date, courses} = this.props
-        const range = Array.from({length: 7}, (x,i) => dates.add(date, i, 'day'));
-        const visible = courses.filter(c => c.visible);
-        const startHr = min(8, min.apply(null, visible.map(c => (c.startTime[0] - 1) % 24)));
-        const endHr = max(14, max.apply(null, visible.map(c => (c.endTime[0] + 1) % 24)));
+        let range = Array.from({length: 7}, (x,i) => dates.add(date, i, 'day'));
+        let showWeekend = false;
+        // let showWeekend = [false, false];
+        let startHr = 8;
+        let endHr = 14;
+        courses.forEach(c => {
+            // Skip invisible courses
+            if (!c.visible) return;
+            // Check whether or not to show the weekend
+            if (!showWeekend && (c.days.indexOf("U") > -1 || c.days.indexOf("S") > -1)) 
+                showWeekend = true;
+            // if (!showWeekend[0] && c.days.indexOf("U") > -1) showWeekend[0] = true;
+            // if (!showWeekend[1] && c.days.indexOf("S") > -1) showWeekend[1] = true;
+            startHr = min(startHr, c.startTime[0] - 1);
+            endHr = max(endHr, c.endTime[0] + 1);
+        })
+        if (!showWeekend)
+            range = range.slice(1, range.length - 1)
+        // range = range.slice(showWeekend[0] ? 0 : 1, range.length - (showWeekend[1] ? 0 : 1))
         return (
             <TimeGrid
                 {...this.props} 
-                min={new Date(0, 0, 0, startHr, 30)} 
-                max={new Date(0, 0, 0, endHr)} 
+                min={startHr <= 0 ? new Date(0,0,0) : new Date(0, 0, 0, startHr, 30)} 
+                max={endHr >= 24 ?  new Date(0, 0, 0, 23, 59, 59) : new Date(0, 0, 0, endHr)} 
                 range={range}
                 eventOffset={15}/>
         );
