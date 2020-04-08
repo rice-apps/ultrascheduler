@@ -5,10 +5,11 @@ const defaultCoursesReducerState = {
                 {
                         "days": "TRF",
                         "startTime": [9, 25],
-                        "endTime": [10, 30],
+                        "endTime": [10, 40],
                         "courseName": "COMP 182",
                         "instructors": ["Luay, Nakleh"],
-                        "crn": 123456
+                        "crn": 123456,
+                        "visible": true,
                 },
                 {
                         "days": "MWF",
@@ -16,7 +17,8 @@ const defaultCoursesReducerState = {
                         "endTime": [14, 50],
                         "courseName": "CAAM 210",
                         "instructors": ["Sershen", "Protasov"],
-                        "crn": 654321
+                        "crn": 654321,
+                        "visible": true,
                 },
                 {
                         "days": "MWF",
@@ -24,7 +26,26 @@ const defaultCoursesReducerState = {
                         "endTime": [11, 0],
                         "courseName": "FWIS 151",
                         "instructors": ["Smith", "Doe"],
-                        "crn": 655657
+                        "crn": 655657,
+                        "visible": true,
+                },
+                {
+                        "days": "S",
+                        "startTime": [6, 19],
+                        "endTime": [13, 37],
+                        "courseName": "HELL 666",
+                        "instructors": ["Pher", "Lucy"],
+                        "crn": 239530,
+                        "visible": false,
+                },
+                {
+                        "days": "U",
+                        "startTime": [22, 30],
+                        "endTime": [23, 30],
+                        "courseName": "SLPZ 222",
+                        "instructors": ["Baere", "Theodore"],
+                        "crn": 222222,
+                        "visible": false,
                 }
 
         ]
