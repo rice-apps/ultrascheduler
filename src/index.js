@@ -1,21 +1,24 @@
 import './index.css'
 
-import React from 'react'
+import React, { Component } from 'react'
 import {render} from 'react-dom'
-import { createStore } from 'redux'
 import { Provider } from 'react-redux'
+import Routes from './components/Routes'
 
-import Reducer from './reducers/index.js';
+import { ConnectedRouter } from 'connected-react-router'
 
-import App from './App'
+// Import store
+import configureStore, { history } from './configureStore';
 
-const store = createStore(Reducer);
-
-console.log(store.getState());
+const store = configureStore({});
 
 render(
     <Provider store={store}>
-        <App/>
+        <ConnectedRouter history={history}>
+            <div>
+                <Routes />
+            </div>
+        </ConnectedRouter>
     </Provider>, 
     document.querySelector('#app')
 )

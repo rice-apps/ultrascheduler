@@ -1,15 +1,16 @@
 import './App.css'
 import React, {Component} from 'react'
-import Header from "./components/Header";
-import CourseCalendar from "./components/Calendar";
+import {connect} from 'react-redux';
+import Login from './components/Login';
+import { Redirect } from 'react-router';
+import { verifyRequest } from './actions/AuthActions';
 
-class App extends Component {
-  render() {
-    return <div className="App" stle={{ display: "inline" }}>
-        <Header />
-        <CourseCalendar />
-    </div>
-  }
+const App = () => {
+	return (
+		<div>
+			<p>I'm a private route.</p>
+		</div>
+	)
 }
 
 export default App;
