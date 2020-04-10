@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {connect} from 'react-redux';
-import {toggleCourse} from '../actions/CoursesActions';
+import {toggleCourse} from '../../actions/CoursesActions';
 
 const ClassSelector = ({courses, toggleCourse}) => {
 	return (<div>
